@@ -17,6 +17,7 @@ typedef long long int ll;
   cout.unsetf(ios::floatfield);                                                \
   cout.precision(x);                                                           \
   cout.setf(ios::fixed, ios::floatfield);
+#define debug(x) cerr << #x << ": " << x << endl;
 
 #ifndef ONLINE_JUDGE
 #define file()                                                                 \
@@ -37,22 +38,17 @@ int main() {
 
   clock_t start_time = clock();
   int t = 1;
-  cin >> t;
+  // cin >> t;
   while (t--)
     solve();
   clock_t end_time = clock();
-  double run_time = (end_time - start_time);
+  double run_time = (end_time - start_time) / CLOCKS_PER_SEC * 1000;
+
   cerr << "Run Time: " << run_time << "ms" << endl;
 }
 
 void solve() {
-  int n, count = 0;
-  cin >> n;
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; j++) {
-      if ((i + j) % 2 != 0)
-        count++;
-    }
+  for (int i = 0; i < 10; i++) {
+    debug(i);
   }
-  cout << count << endl;
 }

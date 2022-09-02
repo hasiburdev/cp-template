@@ -1,4 +1,1 @@
-ABC
-B
-C
-D
+Greater than 9

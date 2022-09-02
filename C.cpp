@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef long long int ll;
+// typedef long long int ll
 
 #define F first
 #define S second
@@ -33,7 +33,7 @@ void solve();
 
 int main() {
   optimize();
-  // file();
+  file();
 
   clock_t start_time = clock();
   int t = 1;
@@ -41,18 +41,34 @@ int main() {
   while (t--)
     solve();
   clock_t end_time = clock();
-  double run_time = (end_time - start_time);
+  double run_time = (end_time - start_time) / CLOCKS_PER_SEC * 1000;
+
   cerr << "Run Time: " << run_time << "ms" << endl;
 }
 
 void solve() {
-  int n, count = 0;
+  int n, max = 0, duplicate = 0;
   cin >> n;
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; j++) {
-      if ((i + j) % 2 != 0)
-        count++;
+  map<int, int> m;
+  for(int i=0; i<n; i++ ) {
+    int x;
+    cin >> x;
+    m[x]++;
+  }
+
+  for( auto u: m) {
+    if(max < u.second)  {
+      max = u.second;
+      duplicate = 0;
+    } else if(max == u.second) {
+      duplicate = 1;
     }
   }
-  cout << count << endl;
+  if(duplicate) {
+    cout << "NO" << endl;
+  } else {
+    cout << "YES" << endl;
+  }
+
+
 }
