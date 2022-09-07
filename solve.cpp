@@ -37,7 +37,7 @@ int main() {
 
   clock_t start_time = clock();
   int t = 1;
-  cin >> t;
+  // cin >> t;
   while (t--)
     solve();
   clock_t end_time = clock();
@@ -45,14 +45,26 @@ int main() {
   cerr << "Run Time: " << run_time << "ms" << endl;
 }
 
-void solve() {
-  int n, count = 0;
-  cin >> n;
-  for (int i = 1; i <= n; i++) {
-    for (int j = 1; j <= n; j++) {
-      if ((i + j) % 2 != 0)
-        count++;
+void staricaseSearch(int arr[][4], int n, int m, int target) {
+  int row = 0, column = m - 1;
+  while (row < n || column >= 0) {
+    if (target == arr[row][column]) {
+      cout << "Row: " << row << endl
+           << "Column: " << column << endl
+           << "Value: " << arr[row][column] << endl;
+      return;
+    } else if (target > arr[row][column]) {
+      row++;
+    } else if (target < arr[row][column]) {
+      column--;
     }
   }
-  cout << count << endl;
+  cout << "404 NOT Found!" << endl;
+}
+
+void solve() {
+  int arr[][4] = {
+      {10, 20, 30, 40}, {15, 25, 35, 45}, {27, 29, 37, 48}, {32, 33, 39, 50}};
+  int n = 4, m = 4;
+  staricaseSearch(arr, n, m, 55);
 }
