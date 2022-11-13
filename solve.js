@@ -1,30 +1,25 @@
 process.stdin.resume();
-process.stdin.setEncoding('utf8');
+process.stdin.setEncoding('utf-8');
 
-// your code goes here
+let inputString = '';
+let currentLine = 0;
 
-// your code goes here
-_input = "";
-process.stdin.on("data", function (input) {
-    _input += input;
-});
-
-process.stdin.on("end", function () {
-	console.log("END");
-   processData(_input);
-});
-
-function processData(input) {
-    //Enter your code here
-    input=input.split("\n");
-    var t=Number(input.shift());
-    while(t>0){         
-        solve(input);
-        t--;
-    }
-} 
-
-function solve(data) {
-    console.log(data)
- 
+const readLine = () => {
+    return inputString[currentLine++];
 }
+
+const main = () => {
+// solution goes here....
+
+}
+
+process.stdin.on('data', inputStdin => {
+    inputString += inputStdin;
+});
+
+process.stdin.on('end', _ => {
+    inputString = inputString.trim().split('\n').map(string => {
+        return string.trim();
+    });
+    main();  
+});
