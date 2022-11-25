@@ -1,0 +1,26 @@
+{
+    "C++ Template for Competitive Programming": {
+        "prefix": "cpsnippet",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "",
+            "#define int long long",
+            "",
+            "void solve();",
+            "int32_t main() {",
+            "    ios_base::sync_with_stdio(0);",
+            "    cin.tie(0);",
+            "    int test_case = 1;",
+            "    // cin >> test_case;",
+            "    while(test_case--) solve();",
+            "    return 0;",
+            "}",
+            "",
+            "void solve() {",
+            "    ",
+            "}"
+        ],
+        "description": "C++ Template for Competitive Programming"
+    }
+}
