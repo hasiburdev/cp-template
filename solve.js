@@ -6,7 +6,10 @@ const readLine = _ => inputString[currentLine++];
 
 const main = _ => {
 // solution goes here....
-
+    const ts = readLine();
+    let b = readLine();
+    b = b.split(" ").map(Number);
+    console.log(b);
 }
 
 process.stdin.on('data', inputStdin => inputString += inputStdin);

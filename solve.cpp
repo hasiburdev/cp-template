@@ -1,21 +1,18 @@
-#include <iostream>
-#include <string>
+#include <bits/stdc++.h>
 using namespace std;
 
-typedef long long ll;
-
-#define endl '\n';
-
-void solve();
-
-int main() {
-  int tc = 1;
-  cin >> tc;
-  while (tc--) {
-    solve();
-  }
+int fastModularExpo(int a, long long n, int MOD) {
+  if (n == 0)
+    return 1;
+  if (n % 2 == 0)
+    return fastModularExpo((1LL * a * a) % MOD, n / 2, MOD);
+  return (1LL * a * fastModularExpo(a, n - 1, MOD)) % MOD;
 }
 
+<<<<<<< Updated upstream
 void solve() {
  
 }
+=======
+int main() { return 0; }
+>>>>>>> Stashed changes
